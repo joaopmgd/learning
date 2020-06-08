@@ -49,6 +49,18 @@ variable "ecs_task_execution_role_name" {
   default     = "myEcsTaskExecutionRole"
 }
 
+variable "az_count" {
+  description = "Number of AZs to cover in a given region"
+  type        = string
+  default     = "2"
+}
+
+variable "default_dns_name" {
+  description = "Name of the URL"
+  type        = string
+  default     = "example.com"
+}
+
 locals {
   default_prefix = "${var.project_name}-${var.user}"
   default_tags = {
